@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Quiz Website</title>
+  <!-- Include particles.js -->
+  <script src="particles.js"></script>
+  <style>
+    /* Navigation bar styles */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start; /* Align content to the top-left */
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      z-index: 1000; /* Ensure the navbar appears above other content */
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px; /* Proper spacing between links */
+      padding: 5px 10px; /* Padding around each link */
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:last-child {
+      margin-right: 0; /* Remove margin from the last link */
+    }
+
+    .navbar a:hover {
+      color: #ccc;
+    }
+
+    /* Quiz container styles */
+    .quiz-container {
+      margin-top: 60px; /* Adjust this value if necessary */
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start; /* Align content to the top-left */
+      }
+
+      .navbar a {
+        margin: 10px 0; /* Spacing between links in mobile view */
+      }
+
+      .quiz-container {
+        margin-top: 120px; /* Adjust this value if necessary */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation bar -->
+  <div class="navbar">
+    <a href="chatquiz.html" target="_blank">Home</a>
+    <a href="3main.html" target="main.html">Main Page</a>
+    <a href="servicesindex.html" target="_blank">Services</a>
+    <a href="about.html" target="_blank">About</a>
+  </div>
+
+  <div id="particles-js"></div>
+  
+  <div class="quiz-container">
+    <div id="question-container" class="question-container"></div>
+    <div id="answer-buttons" class="btn-container"></div>
+    <div id="score-container" class="score-container">
+      Score: <span id="score">0</span>
+    </div>
+    <button id="next-button" class="next-button" onclick="nextQuestion()" disabled>Next</button>
+  </div>
+
+  <script src="script.js" defer></script>
+  <!-- Configure particles.js -->
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 30,
+          "density": {
+            "enable": true,
+            "value_area": 900
+          }
+        },
+        "color": {
+          "value": "random"
+        },
+        "shape": {
+          "type": "triangle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          },
+          "image": {
+            "src": "img/github.svg",
+            "width": 100,
+            "height": 100
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false,
+          "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 10,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 80,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 300,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 2
+        },
+        "move": {
+          "enable": true,
+          "speed": 12,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 800,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 800,
+            "size": 80,
+            "duration": 2,
+            "opacity": 0.8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>
